@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import styles from './HabboImager.module.css';
 import { User, Copy, Download, ArrowDown, ArrowDownLeft, ArrowLeft, ArrowUpLeft, ArrowUp, ArrowUpRight, ArrowRight, ArrowDownRight, Image as ImageIcon, Ruler, Flame, ArrowUpDown, Smile } from 'lucide-react';
