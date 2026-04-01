@@ -2,6 +2,8 @@
 
 A interactive, client-side React component to generate, fetch, and customize Habbo Avatars. This project handles dynamic connections to the official `habbo.com` imaging API out-of-the-box.
 
+<img src="/images/1raw.png" alt="readme-image" width="1000"/>
+
 ## Features
 
 - **Click Copy:** Copy the generated direct image URL instantly.
