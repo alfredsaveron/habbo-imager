@@ -178,23 +178,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 24px 0;
-}
-
-.avatarBox {
-  width: 180px;
-  height: 180px;
-  background: var(--bg-avatar);
-  border: 1px dashed var(--border-avatar);
-  border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 32px 16px;
   position: relative;
   overflow: hidden;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-avatar);
+  margin-bottom: 16px;
 }
 
-.avatarBox::before {
+.avatarBoxWrapper::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -209,12 +201,20 @@
   z-index: 0;
 }
 
+.avatarBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
 .avatarImage {
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.45));
   width: auto;
   height: auto;
-  max-height: 90%;
-  max-width: 90%;
+  max-height: 100%;
+  max-width: 100%;
   image-rendering: pixelated;
   image-rendering: -moz-crisp-edges;
   image-rendering: crisp-edges;

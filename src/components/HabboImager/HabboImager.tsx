@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './HabboImager.module.css';
 import {
   User,
@@ -84,7 +84,6 @@ export function HabboImager({
       initialGesture
     )
   );
-  const prevImageUrlRef = useRef(imageUrl);
 
   useEffect(() => {
     const newUrl = buildAvatarUrl(
@@ -96,7 +95,6 @@ export function HabboImager({
       gesture
     );
     setImageUrl(newUrl);
-    prevImageUrlRef.current = newUrl;
     if (onUrlChange) {
       onUrlChange(newUrl);
     }
@@ -108,7 +106,7 @@ export function HabboImager({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      // ignore
+      return;
     }
   };
 
@@ -120,7 +118,7 @@ export function HabboImager({
       const a = document.createElement('a');
       a.style.display = 'none';
       a.href = url;
-      a.download = `habbo_avatar_${username.trim() || 'Bailed'}.png`;
+      a.download = `habbo_avatar_${username.trim() || '3'}.png`;
       document.body.appendChild(a);
       a.click();
       window.URL.revokeObjectURL(url);
@@ -357,7 +355,7 @@ export function HabboImager({
 
             <div className={styles.sectionContent} style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div className={styles.avatarBoxWrapper}>
-                <div className={styles.avatarBox}>
+                <div className={`${styles.avatarBox} ${size === 'l' ? styles.avatarBoxLarge : ''}`}>
                   {imageUrl ? (
                     <img src={imageUrl} alt="Avatar Preview" className={styles.avatarImage} />
                   ) : (
