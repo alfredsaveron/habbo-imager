@@ -35,7 +35,7 @@ export interface HabboImagerProps {
 
 export function HabboImager({
   initialUsername = '3',
-  initialSize = 'm',
+  initialSize = 'l',
   initialAction = '',
   initialDirection = '2',
   initialHeadDirection = '2',
