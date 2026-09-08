@@ -12,7 +12,7 @@ React + TypeScript component and demo showcase to generate, customize, and downl
 - **Link:** Instant clipboard copy.
 - **Save:** Native avatar download trigger.
 
-## How to Use in Your Project
+## How to?
 
 1. Install required icon library:
    ```bash
@@ -36,7 +36,7 @@ React + TypeScript component and demo showcase to generate, customize, and downl
    }
    ```
 
-## Demo & Local Development
+## Local Development
 
 Run the demo site locally:
 
@@ -53,4 +53,4 @@ npm run build
 
 ## License
 
-MIT
+MIT — Feel free to use, modify, and build on this project for whatever you want.
