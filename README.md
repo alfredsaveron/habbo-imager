@@ -53,4 +53,4 @@ npm run build
 
 ## License
 
-MIT — Feel free to use, modify, and build on this project for whatever you want.
+MIT (Feel free to use, modify, and build on this project for whatever you want.)
