@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./2.png" alt="Banner" width="100%" />
+  <img src="images/2.png" alt="Banner" width="100%" />
   </div>
 
 # Habbo Imager
