@@ -1,0 +1,299 @@
+:root {
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --transition-fast: 0.15s ease;
+  --gap-lg: 16px;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.mainContainer {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    flex-direction: column;
+  }
+  .previewSection {
+    order: -1;
+  }
+}
+
+.controlsSection {
+  flex: 6;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-lg);
+}
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-lg);
+}
+
+@media (max-width: 600px) {
+  .twoColumnGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sectionBox {
+  background: var(--bg-box, #ffffff);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-box, #e5e5e5);
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-header);
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border-box);
+}
+
+.sectionContent {
+  padding: 16px;
+  background: var(--bg-content);
+}
+
+.sectionTitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-title);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.inputField {
+  width: 100%;
+  background: var(--bg-control);
+  border: 1px solid var(--border-control);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-main);
+  font-size: 0.95rem;
+  outline: none;
+  font-family: 'Open Runde', sans-serif;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.inputField:focus {
+  border-color: var(--border-control-hover);
+  background: var(--bg-input-focus);
+}
+
+.btnGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.optionBtn {
+  background: var(--bg-control);
+  border: 1px solid var(--border-control);
+  color: var(--text-control);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  font-family: 'Open Runde', sans-serif;
+}
+
+.optionBtn:hover {
+  background: var(--bg-control-hover);
+  border-color: var(--border-control-hover);
+  color: var(--text-control-hover);
+}
+
+.optionBtnActive {
+  background: var(--bg-control-active);
+  color: var(--text-control-active);
+  border-color: var(--border-control-active);
+  font-weight: 700;
+}
+
+.directionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-control);
+  border: 1px solid var(--border-control);
+  border-radius: var(--radius-sm);
+  color: var(--text-control);
+  padding: 10px 0;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
+  font-size: 0.75rem;
+  font-family: 'Open Runde', sans-serif;
+}
+
+.iconBtn:hover {
+  background: var(--bg-control-hover);
+  border-color: var(--border-control-hover);
+  color: var(--text-control-hover);
+}
+
+.iconBtnActive {
+  background: var(--bg-control-active);
+  color: var(--text-control-active);
+  border-color: var(--border-control-active);
+  font-weight: 700;
+}
+
+.gestureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 8px;
+}
+
+.previewSection {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatarBoxWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+}
+
+.avatarBox {
+  width: 180px;
+  height: 180px;
+  background: var(--bg-avatar);
+  border: 1px dashed var(--border-avatar);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.avatarBox::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, var(--pattern-avatar) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--pattern-avatar) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--pattern-avatar) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--pattern-avatar) 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.avatarImage {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  width: auto;
+  height: auto;
+  max-height: 90%;
+  max-width: 90%;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  position: relative;
+  z-index: 1;
+}
+
+.loadingSpinner {
+  color: var(--text-title);
+  font-size: 0.85rem;
+  z-index: 1;
+}
+
+.actionsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.urlRow {
+  display: flex;
+  background: var(--bg-control);
+  border: 1px solid var(--border-control);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.urlRow:focus-within {
+  border-color: var(--border-control-hover);
+  background: var(--bg-input-focus);
+}
+
+.urlInput {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  padding: 10px 14px;
+  font-size: 0.85rem;
+  outline: none;
+  font-family: 'Open Runde', sans-serif;
+}
+
+.copyBtn {
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--border-control);
+  color: var(--text-control);
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.copyBtn:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-control-hover);
+}
+
+.downloadIconBtn {
+  background: var(--bg-box);
+  border: 1px solid var(--border-control);
+  color: var(--text-control);
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.downloadIconBtn:hover {
+  background: var(--bg-control-hover);
+  color: var(--text-control-hover);
+  border-color: var(--border-control-hover);
+}

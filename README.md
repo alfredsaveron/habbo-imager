@@ -1,27 +1,56 @@
-# React Habbo Imager
+<div align="center">
+  <img src="./2.png" alt="Banner" width="100%" />
+  </div>
 
-A interactive, client-side React component to generate, fetch, and customize Habbo Avatars. This project handles dynamic connections to the official `habbo.com` imaging API out-of-the-box.
+# Habbo Imager
 
-<img src="/images/1raw.png" alt="readme-image" width="1000"/>
+React + TypeScript component and demo showcase to generate, customize, and download Habbo avatars using the official Habbo Imaging API.
 
 ## Features
 
-- **Click Copy:** Copy the generated direct image URL instantly.
-- **Save to Device:** Native cross-origin fetch Blob functionality to download generated avatars.
+- **Customizer:** Username, size, actions (walk/sit/wave), gestures, and 8-direction angles.
+- **Link:** Instant clipboard copy.
+- **Save:** Native avatar download trigger.
 
-## Installation
+## How to Use in Your Project
 
-1. Make sure you have `lucide-react` installed in your project for icons:
+1. Install required icon library:
    ```bash
    npm install lucide-react
    ```
-2. Copy `HabboImager.tsx` and `HabboImager.module.css` into your project's `components` directory.
-3. Import the component anywhere:
-   ```jsx
-   import HabboImager from '@/components/HabboImager';
 
-   function App() {
-     return <HabboImager />
+2. Copy the [`src/components/HabboImager`](./src/components/HabboImager) folder into your project's `components/` directory.
+
+3. Import and use:
+   ```tsx
+   import { HabboImager } from './components/HabboImager';
+
+   export default function App() {
+     return (
+       <HabboImager 
+         initialUsername="3"
+         initialSize="l"
+         onUrlChange={(url) => console.log('Avatar URL:', url)}
+       />
+     );
    }
-   export default App;
    ```
+
+## Demo & Local Development
+
+Run the demo site locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+## License
+
+MIT
